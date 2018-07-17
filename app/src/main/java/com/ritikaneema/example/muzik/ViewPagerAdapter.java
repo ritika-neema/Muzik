@@ -53,12 +53,16 @@ public class ViewPagerAdapter extends PagerAdapter {
                 switch (position) {
                     case 0:
                         Toast.makeText(view.getContext(), "Latest Hindi Songs, Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
                     case 1:
                         Toast.makeText(view.getContext(), "Latest English Songs, Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
                     case 2:
                         Toast.makeText(view.getContext(), "Hindi Song Artists, Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
                     case 3:
                         Toast.makeText(view.getContext(), "English Song Artists, Coming Soon", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         });
