@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding48">48dp</dimen>
     <dimen name="padding32">32dp</dimen>
     <dimen name="padding16">16dp</dimen>
     <dimen name="padding8">8dp</dimen>
+    <dimen name="padding6">6dp</dimen>
     <dimen name="padding4">4dp</dimen>
     <dimen name="textSize50">50sp</dimen>
     <dimen name="viewPagerHt">189dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
 </resources>

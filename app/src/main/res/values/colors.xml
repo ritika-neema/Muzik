@@ -5,4 +5,18 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="alpha_color">#30000000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <!--?xml version="1.0" encoding="UTF-8"?-->
+
+    <color name="primaryColor">#ff9e80</color>
+    <color name="primaryLightColor">#ffd0b0</color>
+    <color name="primaryDarkColor">#c96f53</color>
+    <color name="secondaryColor">#ff7043</color>
+    <color name="secondaryLightColor">#ffa270</color>
+    <color name="secondaryDarkColor">#c63f17</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
+
 </resources>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by uswer on 4/14/2018.
@@ -17,8 +18,9 @@ public class ViewPagerAdapter extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    private int[] images = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background, R.drawable.ic_launcher_background};
+
+    private int[] images = {R.drawable.hindilatest, R.drawable.englishlatest,
+            R.drawable.artists, R.drawable.artistenglishh};
 
 
     public ViewPagerAdapter(Context context) {
@@ -36,15 +38,31 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.custom_layout, null);
+        final View view = layoutInflater.inflate(R.layout.custom_layout, null);
 
         ImageView imageView = view.findViewById(R.id.imageViewFeature);
         imageView.setImageResource(images[position]);
 
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                switch (position) {
+                    case 0:
+                        Toast.makeText(view.getContext(), "Latest Hindi Songs, Coming Soon", Toast.LENGTH_SHORT).show();
+                    case 1:
+                        Toast.makeText(view.getContext(), "Latest English Songs, Coming Soon", Toast.LENGTH_SHORT).show();
+                    case 2:
+                        Toast.makeText(view.getContext(), "Hindi Song Artists, Coming Soon", Toast.LENGTH_SHORT).show();
+                    case 3:
+                        Toast.makeText(view.getContext(), "English Song Artists, Coming Soon", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         return view;
     }
 
@@ -55,4 +73,6 @@ public class ViewPagerAdapter extends PagerAdapter {
         View view = (View) object;
         vp.removeView(view);
     }
+
+
 }

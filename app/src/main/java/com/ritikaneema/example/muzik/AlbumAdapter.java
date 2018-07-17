@@ -11,16 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 
 public class AlbumAdapter extends ArrayAdapter<Album> {
-
-    @NonNull
-    @Override
-    public Context getContext() {
-        return super.getContext();
-    }
 
     public AlbumAdapter(@NonNull Context context, ArrayList<Album> songs) {
         super(context, 0,  songs);
@@ -32,13 +25,15 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View gridItemView = convertView;
         if(gridItemView == null) {
-            gridItemView = LayoutInflater.from(convertView.getContext()).inflate(
-                    R.layout.gridview_layout, parent, false);
+            gridItemView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.gridview_cards, parent, false);
         }
 
         Album currentSong  =  getItem(position);
-        TextView songTextView = (TextView) gridItemView.findViewById(R.id.text_song_name);
+        TextView songTextView = gridItemView.findViewById(R.id.text_song_name);
+        if (currentSong.getmSongName() != null)
         songTextView.setText(currentSong.getmSongName());
+        else songTextView.setText(currentSong.getmPlaylistName());
         TextView artistTextView =  gridItemView.findViewById(R.id.text_artist_name);
         artistTextView.setText(currentSong.getmArtistName());
         ImageView songImageView =  gridItemView.findViewById(R.id.imageview_album);
