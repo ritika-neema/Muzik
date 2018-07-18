@@ -16,20 +16,19 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final int STORAGE_PERMISSIONS_REQUEST = 1;
-
     public static View main_view;
+    private BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //loading the default fragment
         loadFragment(new HomeFragment());
 
         //getting bottom navigation view and attaching the listener
-        BottomNavigationView navigation = findViewById(R.id.navigationView);
+        navigation = findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(this);
 
         main_view = navigation.getRootView();
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-
 
             } else {
                 ActivityCompat.requestPermissions(this, new String[]{
@@ -53,14 +51,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (item.getItemId()) {
             case R.id.navigation_home:
+                navigation.getMenu().getItem(0).setIcon(R.drawable.ic_baseline_home_24px);
+                navigation.getMenu().getItem(1).setIcon(R.drawable.ic_outline_favorite_border_24px);
+                navigation.getMenu().getItem(2).setIcon(R.drawable.ic_outline_play_circle_filled_white_24px);
                 fragment = new HomeFragment();
                 break;
 
             case R.id.navigation_favorites:
+                navigation.getMenu().getItem(0).setIcon(R.drawable.ic_outline_home_24px);
+                navigation.getMenu().getItem(1).setIcon(R.drawable.ic_outline_favorite_24px);
+                navigation.getMenu().getItem(2).setIcon(R.drawable.ic_outline_play_circle_filled_white_24px);
                 fragment = new FavoritesFragment();
                 break;
 
             case R.id.navigation_playlist:
+                navigation.getMenu().getItem(0).setIcon(R.drawable.ic_outline_home_24px);
+                navigation.getMenu().getItem(1).setIcon(R.drawable.ic_outline_favorite_border_24px);
+                navigation.getMenu().getItem(2).setIcon(R.drawable.ic_baseline_play_circle_filled_24px);
                 fragment = new PlaylistFragment();
                 break;
         }

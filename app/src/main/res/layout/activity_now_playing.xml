@@ -1,0 +1,151 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context="com.ritikaneema.example.muzik.NowPlayingActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <RelativeLayout
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/padding48"
+            android:layout_height="@dimen/padding48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/padding8"
+            android:background="@drawable/item_bg"
+            app:srcCompat="@drawable/ic_outline_chevron_left_24px" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/album_card"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/padding32"
+            android:layout_marginLeft="@dimen/_90dp"
+            android:layout_marginRight="@dimen/_90dp"
+            android:layout_marginTop="@dimen/_90dp"
+            app:cardElevation="@dimen/padding32">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/album" />
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ic_music_control"
+            android:layout_below="@id/album_card"
+            android:layout_marginBottom="@dimen/padding16"
+            android:layout_marginTop="@dimen/padding32"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding32"
+                android:text="@string/title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding6"
+                android:paddingLeft="@dimen/padding32"
+                android:text="@string/artist"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <SeekBar
+                android:id="@+id/songProgressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="@dimen/padding6" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ic_music_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom">
+
+            <ImageView
+                android:id="@+id/ic_favorite"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="@dimen/padding16"
+                app:srcCompat="@drawable/ic_outline_favorite_border_24px" />
+
+            <ImageView
+                android:id="@+id/ic_play_prev"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/padding16"
+                android:layout_toRightOf="@id/ic_favorite"
+                app:srcCompat="@drawable/ic_outline_first_page_24px" />
+
+            <ImageView
+                android:id="@+id/ic_play"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="@dimen/padding4"
+                android:layout_toLeftOf="@id/ic_play_next"
+                android:layout_toRightOf="@id/ic_play_prev"
+                app:srcCompat="@drawable/ic_outline_play_circle_filled_white_24px" />
+
+            <ImageView
+                android:id="@+id/ic_play_next"
+                android:layout_width="@dimen/padding32"
+                android:layout_height="@dimen/padding32"
+                android:layout_margin="@dimen/padding16"
+                android:layout_toLeftOf="@id/ic_shuffle"
+                app:srcCompat="@drawable/ic_outline_last_page_24px" />
+
+            <ImageView
+                android:id="@+id/ic_shuffle"
+                android:layout_width="@dimen/padding32"
+                android:layout_height="@dimen/padding32"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/padding16"
+                app:srcCompat="@drawable/ic_sharp_shuffle_24px" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

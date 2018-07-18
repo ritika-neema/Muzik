@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_album"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="@dimen/padding4"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/padding4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/album"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/text_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/image_album"
+        app:layout_constraintTop_toTopOf="@+id/image_album" />
+
+    <TextView
+        android:id="@+id/text_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/artist"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toBottomOf="@+id/image_album"
+        app:layout_constraintStart_toEndOf="@+id/image_album"
+        app:layout_constraintTop_toBottomOf="@+id/text_song" />
+
+    <ImageView
+        android:id="@+id/ic_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_album"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/image_album"
+        app:srcCompat="@drawable/ic_sharp_more_vert_24px" />
+</android.support.constraint.ConstraintLayout>

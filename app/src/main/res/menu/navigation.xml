@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/navigation_home"
-            android:icon="@drawable/ic_outline_home_24px"
-            android:title="Songs"/>
+            android:icon="@drawable/ic_baseline_home_24px"
+            android:title="Home" />
 
         <item
             android:id="@+id/navigation_favorites"
