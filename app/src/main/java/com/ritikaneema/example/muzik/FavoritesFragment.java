@@ -33,18 +33,21 @@ public class FavoritesFragment extends Fragment {
 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        final ArrayList<Album> localSon = new ArrayList<Album>();
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        localSon.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
+        final ArrayList<Album> favoriteSongs = new ArrayList<Album>();
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        favoriteSongs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
 
-        AlbumAdapter song = new AlbumAdapter(rootview.getContext(), localSon);
+        AlbumAdapter song = new AlbumAdapter(rootview.getContext(), favoriteSongs);
         GridView gridView = rootview.findViewById(R.id.grid_view_layout);
         gridView.setAdapter(song);
 
@@ -52,7 +55,7 @@ public class FavoritesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Snackbar snackbar = Snackbar
-                        .make(main_view, localSon.get(position).getmSongName(), Snackbar.LENGTH_INDEFINITE)
+                        .make(main_view, favoriteSongs.get(position).getmSongName(), Snackbar.LENGTH_INDEFINITE)
                         .setAction("Playing", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

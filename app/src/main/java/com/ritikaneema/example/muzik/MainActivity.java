@@ -22,29 +22,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        //loading the default fragment
-        loadFragment(new HomeFragment());
-
-        //getting bottom navigation view and attaching the listener
-        navigation = findViewById(R.id.navigationView);
-        navigation.setOnNavigationItemSelectedListener(this);
-
-        main_view = navigation.getRootView();
-
+        //check api version and request WRITE_EXTERNAL_STORAGE accordingly
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-
+                setView();
             } else {
                 ActivityCompat.requestPermissions(this, new String[]{
                         Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSIONS_REQUEST);
+                return;
             }
         } else {
             //permission is automatically granted on sdk<23 upon installation
+            setView();
         }
+
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -85,13 +80,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     // permission was granted, yay!
+                    setView();
+
                 } else {
                     Toast.makeText(getBaseContext(), "The app require storage permission to run", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
+                break;
 
             }
-            // other 'case' lines to check for other
-            // permissions this app might request.
         }
     }
 
@@ -107,4 +104,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
+    private void setView() {
+        setContentView(R.layout.activity_main);
+
+        //getting bottom navigation view and attaching the listener
+        navigation = findViewById(R.id.navigationView);
+        navigation.setOnNavigationItemSelectedListener(this);
+
+        //get rootview for reference for fragments
+        main_view = navigation.getRootView();
+
+        //loading the default fragment
+        loadFragment(new HomeFragment());
+
+    }
 }

@@ -28,7 +28,7 @@
             android:name=".NowPlayingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_now_playing"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/ThemeActionBar"></activity>
     </application>
 
 </manifest>

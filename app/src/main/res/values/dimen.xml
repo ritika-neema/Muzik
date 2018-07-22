@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding60">60dp</dimen>
     <dimen name="padding48">48dp</dimen>
     <dimen name="padding32">32dp</dimen>
     <dimen name="padding16">16dp</dimen>

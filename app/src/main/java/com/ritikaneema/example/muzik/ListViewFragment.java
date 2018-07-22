@@ -36,15 +36,19 @@ public class ListViewFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         songs = new ArrayList<Album>();
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
-        songs.add(new Album("Soorma Anthem", "Shankar Mahadevan", R.drawable.album));
+
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        songs.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
 
         ListViewAdapter song = new ListViewAdapter(rootview.getContext(), songs);
         ListView listView = rootview.findViewById(R.id.listview_songs);

@@ -21,17 +21,16 @@ public class PlaylistFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         rootview = inflater.inflate(R.layout.fragment_gridview, null);
-        ArrayList<Album> localSong = new ArrayList<Album>();
-        localSong.add(new Album("Delight", R.drawable.album));
-        localSong.add(new Album("EDM", R.drawable.album));
-        localSong.add(new Album("Romantic", R.drawable.album));
-        localSong.add(new Album("Shared", R.drawable.album));
-        localSong.add(new Album("Nostalgiac", R.drawable.album));
-        localSong.add(new Album("Travel", R.drawable.album));
-        localSong.add(new Album("Sufi", R.drawable.album));
+        ArrayList<Album> playlists = new ArrayList<Album>();
+        playlists.add(new Album("Delight", R.drawable.album));
+        playlists.add(new Album("EDM", R.drawable.album));
+        playlists.add(new Album("Romantic", R.drawable.album));
+        playlists.add(new Album("Shared", R.drawable.album));
+        playlists.add(new Album("Nostalgiac", R.drawable.album));
+        playlists.add(new Album("Travel", R.drawable.album));
+        playlists.add(new Album("Sufi", R.drawable.album));
 
-
-        AlbumAdapter song = new AlbumAdapter(rootview.getContext(), localSong);
+        AlbumAdapter song = new AlbumAdapter(rootview.getContext(), playlists);
         GridView gridView = rootview.findViewById(R.id.grid_view_layout);
         gridView.setAdapter(song);
 

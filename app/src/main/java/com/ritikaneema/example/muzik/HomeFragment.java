@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        //load child fragment GridViewFragment for songs on local storage
         getChildFragmentManager().beginTransaction()
                 .add(R.id.gridview_container, new GridViewFragment())
                 .addToBackStack("B")

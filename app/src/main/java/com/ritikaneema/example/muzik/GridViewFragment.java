@@ -39,11 +39,14 @@ public class GridViewFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         localSong = new ArrayList<Album>();
-        localSong.add(new Album("Z-Chota sa fasana", "Arijit Singh", R.drawable.album));
-        localSong.add(new Album("Z-Chota sa fasana", "Arijit Singh", R.drawable.album));
-        localSong.add(new Album("Z-Chota sa fasana", "Arijit Singh", R.drawable.album));
-        localSong.add(new Album("Z-Chota sa fasana", "Arijit Singh", R.drawable.album));
-        localSong.add(new Album("Z-Chota sa fasana", "Arijit Singh", R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
+        localSong.add(new Album(getString(R.string.title), getString(R.string.artist), R.drawable.album));
 
         getSongList();
 
